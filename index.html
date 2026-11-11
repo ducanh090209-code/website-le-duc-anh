@@ -1,1 +1,333 @@
 
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lê Đức Anh | Personal Website</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #071426;
+    color: #eaf3ff;
+    line-height: 1.7;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(7,20,38,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid #24466b;
+    padding: 16px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.logo {
+    color: #75baff;
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+nav a {
+    color: #d7e8ff;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #75baff;
+}
+
+section {
+    padding: 75px 8%;
+}
+
+.hero {
+    min-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background:
+      radial-gradient(circle at 80% 20%, #174875 0%, transparent 35%),
+      linear-gradient(135deg, #071426, #102c4c);
+}
+
+.tag {
+    color: #75baff;
+    letter-spacing: 4px;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 7vw, 72px);
+    margin: 15px 0;
+    line-height: 1.15;
+}
+
+.hero h1 span {
+    color: #75baff;
+}
+
+.hero p {
+    max-width: 600px;
+    color: #b9cce2;
+    font-size: 17px;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 25px;
+    border-radius: 30px;
+    background: linear-gradient(120deg, #2475bd, #79bdff);
+    color: #061426;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px #2879bd55;
+}
+
+.section-title {
+    color: #83c2ff;
+    font-size: 30px;
+    margin-bottom: 25px;
+}
+
+.about-box, .card, .link-card {
+    background: linear-gradient(145deg, #102945, #0b1d33);
+    border: 1px solid #24466b;
+    border-radius: 18px;
+    padding: 25px;
+    box-shadow: 0 10px 30px #00000025;
+}
+
+.about-box p {
+    margin: 10px 0;
+    color: #c5d7eb;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 20px;
+}
+
+.card h3 {
+    color: #83c2ff;
+    margin-bottom: 8px;
+}
+
+.card p {
+    color: #b9cce2;
+}
+
+.gallery img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 14px;
+    border: 1px solid #315779;
+}
+
+video {
+    width: 100%;
+    max-width: 850px;
+    border-radius: 16px;
+    border: 1px solid #315779;
+    margin-top: 15px;
+}
+
+.link-card {
+    text-align: center;
+}
+
+.link-card a {
+    color: #83c2ff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.link-card a:hover {
+    color: white;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #050f1d;
+    color: #8ba8c6;
+    border-top: 1px solid #24466b;
+}
+
+@media(max-width: 600px) {
+    header {
+        justify-content: center;
+    }
+
+    nav {
+        justify-content: center;
+        gap: 12px;
+    }
+
+    section {
+        padding: 55px 6%;
+    }
+
+    .hero {
+        min-height: 75vh;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">LE DUC ANH</div>
+    <nav>
+        <a href="#home">Trang chủ</a>
+        <a href="#about">Giới thiệu</a>
+        <a href="#hobbies">Sở thích</a>
+        <a href="#subjects">Môn học</a>
+        <a href="#gallery">Thư viện</a>
+        <a href="#video">Video</a>
+        <a href="#links">Liên kết</a>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <div class="tag">Welcome to my personal website</div>
+    <h1>Xin chào,<br>mình là <span>Lê Đức Anh</span></h1>
+    <p>
+        Chào mừng bạn đến với website cá nhân của mình.
+        Đây là nơi chia sẻ thông tin, sở thích và những khoảnh khắc đáng nhớ.
+    </p>
+    <div>
+        <a href="#about" class="btn">Khám phá thêm</a>
+    </div>
+</section>
+
+<section id="about">
+    <h2 class="section-title">Giới thiệu bản thân</h2>
+    <div class="about-box">
+        <p><strong>Họ và tên:</strong> Lê Đức Anh</p>
+        <p><strong>Ngày sinh:</strong> 09/02/2009</p>
+        <p><strong>Sở thích:</strong> Cầu lông, bóng đá và cờ vua</p>
+        <p>
+            Mình luôn yêu thích việc học hỏi, khám phá những điều mới
+            và phát triển bản thân qua từng trải nghiệm.
+        </p>
+    </div>
+</section>
+
+<section id="hobbies">
+    <h2 class="section-title">Sở thích của mình</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>🏸 Cầu lông</h3>
+            <p>Môn thể thao mình yêu thích, giúp rèn luyện sự nhanh nhẹn và tinh thần thi đấu.</p>
+        </div>
+        <div class="card">
+            <h3>⚽ Bóng đá</h3>
+            <p>Mình thích sự phối hợp đồng đội và những trận đấu đầy năng lượng.</p>
+        </div>
+        <div class="card">
+            <h3>♟️ Cờ vua</h3>
+            <p>Một sở thích giúp mình rèn luyện tư duy logic và khả năng chiến thuật.</p>
+        </div>
+    </div>
+</section>
+
+<section id="subjects">
+    <h2 class="section-title">Môn học yêu thích</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>Toán học</h3>
+            <p>Rèn luyện tư duy logic và khả năng giải quyết vấn đề.</p>
+        </div>
+        <div class="card">
+            <h3>Vật lý</h3>
+            <p>Khám phá các quy luật và hiện tượng trong cuộc sống.</p>
+        </div>
+        <div class="card">
+            <h3>Tiếng Anh</h3>
+            <p>Mở rộng kiến thức và kết nối với thế giới.</p>
+        </div>
+    </div>
+</section>
+
+<section id="gallery">
+    <h2 class="section-title">Thư viện hình ảnh</h2>
+    <div class="grid gallery">
+        <img src="images/nhiep-anh.jpg.jpeg" alt="Hình ảnh 1">
+        <img src="images/chay-bo.jpg.jpeg" alt="Hình ảnh 2">
+        <img src="images/cau-long.jpg.jpeg" alt="Hình ảnh 3">
+    </div>
+</section>
+
+<section id="video">
+    <h2 class="section-title">Video của mình</h2>
+    <p>Những khoảnh khắc được lưu giữ qua video.</p>
+    <video controls playsinline>
+        <source src="video.mp4" type="video/mp4">
+        Trình duyệt không hỗ trợ video.
+    </video>
+</section>
+
+<section id="links">
+    <h2 class="section-title">Liên kết yêu thích</h2>
+    <div class="grid">
+        <div class="link-card">
+            <h3>🏸 BWF</h3>
+            <p>Liên đoàn Cầu lông Thế giới</p>
+            <a href="https://bwfbadminton.com/" target="_blank" rel="noopener">Truy cập BWF →</a>
+        </div>
+
+        <div class="link-card">
+            <h3>📘 BWF Facebook</h3>
+            <p>Theo dõi tin tức cầu lông quốc tế</p>
+            <a href="https://www.facebook.com/bwfbadminton" target="_blank" rel="noopener">Truy cập Facebook →</a>
+        </div>
+
+        <div class="link-card">
+            <h3>📷 Canon</h3>
+            <p>Thương hiệu máy ảnh mình quan tâm</p>
+            <a href="https://vn.canon/" target="_blank" rel="noopener">Truy cập Canon →</a>
+        </div>
+    </div>
+</section>
+
+<footer>
+    © 2026 Lê Đức Anh | Personal Website
+</footer>
+
+</body>
+</html>
+
