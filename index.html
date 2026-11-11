@@ -25,7 +25,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 100;
-    background: rgba(7,20,38,0.95);
+    background: rgba(7,20,38,0.96);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid #24466b;
     padding: 16px 7%;
@@ -46,14 +46,13 @@ header {
 nav {
     display: flex;
     flex-wrap: wrap;
-    gap: 18px;
+    gap: 16px;
 }
 
 nav a {
     color: #d7e8ff;
     text-decoration: none;
     font-size: 14px;
-    transition: 0.3s;
 }
 
 nav a:hover {
@@ -70,8 +69,8 @@ section {
     flex-direction: column;
     justify-content: center;
     background:
-      radial-gradient(circle at 80% 20%, #174875 0%, transparent 35%),
-      linear-gradient(135deg, #071426, #102c4c);
+    radial-gradient(circle at 80% 20%, #174875 0%, transparent 35%),
+    linear-gradient(135deg, #071426, #102c4c);
 }
 
 .tag {
@@ -128,7 +127,28 @@ section {
     box-shadow: 0 10px 30px #00000025;
 }
 
-.about-box p {
+.about-box {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.avatar {
+    width: 190px;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #75baff;
+    box-shadow: 0 0 25px #2475bd66;
+}
+
+.about-info {
+    flex: 1;
+    min-width: 220px;
+}
+
+.about-info p {
     margin: 10px 0;
     color: #c5d7eb;
 }
@@ -137,6 +157,16 @@ section {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
     gap: 20px;
+}
+
+.card {
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #75baff;
 }
 
 .card h3 {
@@ -148,12 +178,12 @@ section {
     color: #b9cce2;
 }
 
-.gallery img {
+.card img {
     width: 100%;
-    height: 230px;
+    height: 190px;
     object-fit: cover;
-    border-radius: 14px;
-    border: 1px solid #315779;
+    border-radius: 12px;
+    margin-bottom: 15px;
 }
 
 video {
@@ -168,7 +198,13 @@ video {
     text-align: center;
 }
 
+.link-card h3 {
+    color: #83c2ff;
+}
+
 .link-card a {
+    display: inline-block;
+    margin-top: 12px;
     color: #83c2ff;
     text-decoration: none;
     font-weight: bold;
@@ -203,6 +239,11 @@ footer {
     .hero {
         min-height: 75vh;
     }
+
+    .about-box {
+        justify-content: center;
+        text-align: center;
+    }
 }
 </style>
 </head>
@@ -216,12 +257,12 @@ footer {
         <a href="#about">Giới thiệu</a>
         <a href="#hobbies">Sở thích</a>
         <a href="#subjects">Môn học</a>
-        <a href="#gallery">Thư viện</a>
         <a href="#video">Video</a>
         <a href="#links">Liên kết</a>
     </nav>
 </header>
 
+<!-- TRANG CHỦ -->
 <section class="hero" id="home">
     <div class="tag">Welcome to my personal website</div>
     <h1>Xin chào,<br>mình là <span>Lê Đức Anh</span></h1>
@@ -234,48 +275,80 @@ footer {
     </div>
 </section>
 
+<!-- GIỚI THIỆU -->
 <section id="about">
     <h2 class="section-title">Giới thiệu bản thân</h2>
+
     <div class="about-box">
-        <p><strong>Họ và tên:</strong> Lê Đức Anh</p>
-        <p><strong>Ngày sinh:</strong> 09/02/2009</p>
-        <p><strong>Sở thích:</strong> Cầu lông, bóng đá và cờ vua</p>
-        <p>
-            Mình luôn yêu thích việc học hỏi, khám phá những điều mới
-            và phát triển bản thân qua từng trải nghiệm.
-        </p>
+        <img
+            src="images/anh-dai-dien.jpg"
+            alt="Ảnh đại diện Lê Đức Anh"
+            class="avatar"
+        >
+
+        <div class="about-info">
+            <p><strong>Họ và tên:</strong> Lê Đức Anh</p>
+            <p><strong>Ngày sinh:</strong> 09/02/2009</p>
+            <p><strong>Sở thích:</strong> Cầu lông, bóng đá, cờ vua</p>
+            <p>
+                Mình luôn yêu thích học hỏi, khám phá những điều mới
+                và phát triển bản thân qua từng trải nghiệm.
+            </p>
+        </div>
     </div>
 </section>
 
+<!-- SỞ THÍCH -->
 <section id="hobbies">
     <h2 class="section-title">Sở thích của mình</h2>
+
     <div class="grid">
+
         <div class="card">
+            <img src="images/cau-long.jpg" alt="Cầu lông">
             <h3>🏸 Cầu lông</h3>
-            <p>Môn thể thao mình yêu thích, giúp rèn luyện sự nhanh nhẹn và tinh thần thi đấu.</p>
+            <p>
+                Môn thể thao mình yêu thích, giúp rèn luyện
+                sự nhanh nhẹn và tinh thần thi đấu.
+            </p>
         </div>
+
         <div class="card">
+            <img src="images/bong-da.jpg" alt="Bóng đá">
             <h3>⚽ Bóng đá</h3>
-            <p>Mình thích sự phối hợp đồng đội và những trận đấu đầy năng lượng.</p>
+            <p>
+                Mình thích sự phối hợp đồng đội
+                và những trận đấu đầy năng lượng.
+            </p>
         </div>
+
         <div class="card">
+            <img src="images/co-vua.jpg" alt="Cờ vua">
             <h3>♟️ Cờ vua</h3>
-            <p>Một sở thích giúp mình rèn luyện tư duy logic và khả năng chiến thuật.</p>
+            <p>
+                Một sở thích giúp mình rèn luyện
+                tư duy logic và khả năng chiến thuật.
+            </p>
         </div>
+
     </div>
 </section>
 
+<!-- MÔN HỌC -->
 <section id="subjects">
     <h2 class="section-title">Môn học yêu thích</h2>
+
     <div class="grid">
         <div class="card">
             <h3>Toán học</h3>
             <p>Rèn luyện tư duy logic và khả năng giải quyết vấn đề.</p>
         </div>
+
         <div class="card">
             <h3>Vật lý</h3>
             <p>Khám phá các quy luật và hiện tượng trong cuộc sống.</p>
         </div>
+
         <div class="card">
             <h3>Tiếng Anh</h3>
             <p>Mở rộng kiến thức và kết nối với thế giới.</p>
@@ -283,44 +356,50 @@ footer {
     </div>
 </section>
 
-<section id="gallery">
-    <h2 class="section-title">Thư viện hình ảnh</h2>
-    <div class="grid gallery">
-        <img src="images/nhiep-anh.jpg.jpeg" alt="Hình ảnh 1">
-        <img src="images/chay-bo.jpg.jpeg" alt="Hình ảnh 2">
-        <img src="images/cau-long.jpg.jpeg" alt="Hình ảnh 3">
-    </div>
-</section>
-
+<!-- VIDEO -->
 <section id="video">
     <h2 class="section-title">Video của mình</h2>
     <p>Những khoảnh khắc được lưu giữ qua video.</p>
+
     <video controls playsinline>
         <source src="video.mp4" type="video/mp4">
         Trình duyệt không hỗ trợ video.
     </video>
 </section>
 
+<!-- LIÊN KẾT -->
 <section id="links">
     <h2 class="section-title">Liên kết yêu thích</h2>
+
     <div class="grid">
+
         <div class="link-card">
             <h3>🏸 BWF</h3>
             <p>Liên đoàn Cầu lông Thế giới</p>
-            <a href="https://bwfbadminton.com/" target="_blank" rel="noopener">Truy cập BWF →</a>
+            <a href="https://bwfbadminton.com/"
+               target="_blank" rel="noopener">
+               Truy cập BWF →
+            </a>
         </div>
 
         <div class="link-card">
             <h3>📘 BWF Facebook</h3>
             <p>Theo dõi tin tức cầu lông quốc tế</p>
-            <a href="https://www.facebook.com/bwfbadminton" target="_blank" rel="noopener">Truy cập Facebook →</a>
+            <a href="https://www.facebook.com/bwfbadminton"
+               target="_blank" rel="noopener">
+               Truy cập Facebook →
+            </a>
         </div>
 
         <div class="link-card">
             <h3>📷 Canon</h3>
             <p>Thương hiệu máy ảnh mình quan tâm</p>
-            <a href="https://vn.canon/" target="_blank" rel="noopener">Truy cập Canon →</a>
+            <a href="https://vn.canon/"
+               target="_blank" rel="noopener">
+               Truy cập Canon →
+            </a>
         </div>
+
     </div>
 </section>
 
@@ -330,4 +409,3 @@ footer {
 
 </body>
 </html>
-
